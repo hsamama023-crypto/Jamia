@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title id="tabTitle">Jamia Islah Binatul Mislemeen - Jalsa</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@600;700;800&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--green:#0A3D2A;--green2:#0E5A3E;--gold:#D4AF37;--gold2:#F5D67B;--cream:#FFF9EC;--dark:#071F15}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:#1a1a1a;overflow-x:hidden}
+.topbar{background:var(--green);color:#fff;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;position:sticky;top:0;z-index:50}
+.topbar b{color:var(--gold2)}
+.adminBtn{background:#fff;color:#0A3D2A;border:none;padding:6px 12px;border-radius:20px;font-weight:700;font-size:12px;cursor:pointer}
+.hero{background:radial-gradient(ellipse at 50% 0%,#0E5A3E 0%,#0A3D2A 55%,#071F15 100%);color:#fff;text-align:center;padding:28px 18px 0;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 20%,rgba(212,175,55,.18) 0,transparent 30%),radial-gradient(circle at 80% 30%,rgba(212,175,55,.15) 0,transparent 30%);pointer-events:none}
+.pattern{position:absolute;left:0;right:0;bottom:0;height:90px;opacity:.95;pointer-events:none}
+.bism{font-family:'Amiri',serif;font-size:34px;color:var(--gold2);line-height:1.2;text-shadow:0 2px 20px rgba(212,175,55,.5)}
+.badge{display:inline-block;margin:14px 0 8px;background:rgba(255,255,255,.12);border:1px solid rgba(212,175,55,.6);color:var(--gold2);padding:6px 14px;border-radius:20px;font-size:12px;letter-spacing:1px;font-weight:700}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,7.5vw,42px);line-height:1.15;position:relative;z-index:2}
+.hero h1 span{color:var(--gold2)}
+.hero p.sub{opacity:.9;font-size:14.5px;line-height:1.6;max-width:520px;margin:12px auto 0;position:relative;z-index:2}
+.countBox{background:#FFF9EC;color:#1a1a1a;border:2px solid var(--gold);border-radius:20px;padding:16px 12px;max-width:520px;margin:18px auto 0;position:relative;z-index:3;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.countBox small{letter-spacing:1.5px;font-weight:800;color:#0A3D2A;font-size:11px}
+.countGrid{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.cd{background:var(--green);color:#fff;border-radius:14px;min-width:68px;padding:10px 6px}
+.cd b{display:block;font-size:26px;line-height:1}
+.cd span{font-size:11px;color:var(--gold2)}
+.dateLine{margin-top:10px;font-weight:700;font-size:14px;color:#0A3D2A}
+.quick{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0 22px;position:relative;z-index:3}
+.qbtn{border:none;cursor:pointer;padding:12px 18px;border-radius:30px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:6px;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.q1{background:linear-gradient(180deg,#F5D67B,#D4AF37);color:#2a1d00}
+.q2{background:#fff;color:#0A3D2A}
+.q3{background:var(--green);color:#fff;border:1px solid var(--gold)}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 90px}
+.sec{margin-top:26px}
+.secTitle{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.secTitle h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--green)}
+.secTitle i{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);display:block}
+.card{background:#fff;border:1px solid #EADFAE;border-radius:18px;padding:16px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.madrasaCard{display:flex;gap:14px;align-items:center}
+.madrasaCard .logo{width:72px;height:72px;border-radius:50%;background:var(--green);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;border:3px solid var(--gold);box-shadow:0 0 0 4px #FFF3C4}
+.madrasaCard h3{font-size:18px;color:var(--green);line-height:1.3}
+.madrasaCard p{font-size:13.5px;line-height:1.6;color:#555;margin-top:4px}
+.prog{display:flex;flex-direction:column;gap:10px}
+.progItem{display:flex;gap:12px;background:#fff;border:1px solid #EADFAE;border-radius:16px;padding:13px;align-items:flex-start}
+.timeBox{background:var(--green);color:#fff;border-radius:12px;padding:8px 10px;text-align:center;min-width:68px;flex-shrink:0}
+.timeBox b{font-size:14px}.timeBox span{font-size:11px;color:var(--gold2)}
+.progItem h4{font-size:15.5px;color:#111}.progItem p{font-size:13px;color:#666;margin-top:3px;line-height:1.5}
+.guestGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.guest{background:#fff;border:1px solid #EADFAE;border-radius:16px;padding:14px;text-align:center}
+.guest .av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#0E5A3E,#D4AF37);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;margin:0 auto 8px;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.guest h4{font-size:14.5px}.guest p{font-size:12.5px;color:#777;margin-top:2px}
+.guest span{font-size:11px;background:#FFF3C4;color:#7a5a00;padding:3px 8px;border-radius:10px;display:inline-block;margin-top:6px;font-weight:700}
+.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.gimg{aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg,#0E5A3E,#1A7A52);display:flex;align-items:center;justify-content:center;font-size:34px;color:#fff;overflow:hidden;position:relative}
+.gimg img{width:100%;height:100%;object-fit:cover}
+.gimg small{position:absolute;bottom:6px;left:6px;right:6px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:4px 6px;border-radius:8px;text-align:center}
+.locCard{background:var(--green);color:#fff;border-radius:18px;padding:18px}
+.locCard h3{color:var(--gold2)}.locCard p{font-size:14px;line-height:1.7;margin-top:6px;opacity:.95}
+.locBtns{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.locBtns a,.locBtns button{flex:1;text-align:center;text-decoration:none;border:none;cursor:pointer;padding:11px;border-radius:12px;font-weight:700;font-size:13.5px}
+.btnGold{background:var(--gold);color:#222}.btnWhite{background:#fff;color:#0A3D2A}
+.donate{background:linear-gradient(135deg,#FFF3C4,#FFE9A8);border:2px dashed #D4AF37;border-radius:18px;padding:18px;text-align:center}
+.donate h3{color:#7a5a00}.donate p{font-size:13.5px;color:#555;margin-top:6px;line-height:1.6}
+.copyBtn{background:var(--green);color:#fff;border:none;padding:10px 18px;border-radius:20px;font-weight:700;margin-top:10px;cursor:pointer}
+.invitation{background:#fff;border:2px solid var(--gold);border-radius:20px;padding:22px 18px;text-align:center;position:relative;overflow:hidden}
+.invitation:before{content:'✦';position:absolute;top:8px;left:12px;color:var(--gold);font-size:20px}
+.invitation:after{content:'✦';position:absolute;top:8px;right:12px;color:var(--gold);font-size:20px}
+.invitation h2{font-family:'Amiri',serif;font-size:28px;color:var(--green)}
+.invitation h3{font-family:'Playfair Display',serif;font-size:20px;margin-top:6px}
+.invitation p{font-size:13.5px;line-height:1.7;color:#555;margin-top:8px}
+.footer{text-align:center;padding:20px;font-size:12.5px;color:#888}
+.floatBar{position:fixed;left:12px;right:12px;bottom:12px;background:var(--green);border-radius:20px;padding:10px;display:flex;gap:8px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:560px;margin:auto}
+.floatBar a,.floatBar button{flex:1;text-align:center;text-decoration:none;border:none;cursor:pointer;padding:11px;border-radius:14px;font-weight:800;font-size:13px}
+</style>
+</head>
+  <body>
+<div class="topbar"><span>🕌 <b id="topName">Jamia Islah Binatul Mislemeen</b> • Gujranwala</span><button class="adminBtn" onclick="openAdmin()">⚙️ Admin</button></div>
 
+<div class="hero">
+<div class="bism">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+<div class="badge">✦ <span id="heroBadge">SALANA JALSA • DAWAT-E-AAM</span> ✦</div>
+<h1 id="heroTitle">Jalsa-e-<span>Dastarbandi</span><br>& Mehfil-e-Naat</h1>
+<p class="sub" id="heroDesc">Allah ke fazal se hamare Madrasa ka salana Jalsa hone ja raha hai. Aap sab ko dil se dawat hai. Zaroor tashreef layen aur bachiyon ki hosla afzai karen.</p>
+
+<div class="countBox">
+<small>⏳ JALSA SHURU HONE ME REHTA WAQT</small>
+<div class="countGrid"><div class="cd"><b id="cD">02</b><span>DIN</span></div><div class="cd"><b id="cH">00</b><span>GHANTE</span></div><div class="cd"><b id="cM">00</b><span>MINUTE</span></div><div class="cd"><b id="cS">00</b><span>SECOND</span></div></div>
+<div class="dateLine" id="dateLine">📅 19 November 2026 • 🕓 4:00 PM • 📍 Madrasa Hall</div>
+</div>
+
+<div class="quick">
+<button class="qbtn q1" onclick="showInvite()">💌 Dawat Nama</button>
+<button class="qbtn q2" onclick="shareWA()">📲 WhatsApp Pe Bhejo</button>
+<button class="qbtn q3" onclick="openMap()">📍 Rasta Dekho</button>
+</div>
+<svg class="pattern" viewBox="0 0 600 90" preserveAspectRatio="none"><path d="M0,90 L0,50 Q50,10 100,50 T200,50 T300,50 T400,50 T500,50 T600,50 L600,90 Z" fill="#FFF9EC"/><circle cx="50" cy="45" r="8" fill="#D4AF37"/><circle cx="300" cy="45" r="8" fill="#D4AF37"/><circle cx="550" cy="45" r="8" fill="#D4AF37"/></svg>
+</div>
+
+<div class="wrap">
+<div class="sec"><div class="secTitle"><h2>Madrasa Ka Taaruf</h2><i></i></div>
+<div class="card madrasaCard"><div class="logo">🕌</div><div><h3 id="madName">Jamia Islah Binatul Mislemeen</h3><p id="madDesc">Bachiyon ke liye Deeni Taleem ka idara. Hifz-e-Quran, Tajweed, Dars-e-Nizami aur Akhlaq ki tarbiyat. Yahan betiyan Deen aur Duniya dono ki roshni paati hain.</p><p style="color:#0A3D2A;font-weight:700;margin-top:8px">👩‍🎓 <span id="studentCount">120+ Talibat</span> • 👩‍🏫 <span id="teacherCount">8 Ustadha</span></p></div></div></div>
+
+<div class="sec"><div class="secTitle"><h2>📋 Program Schedule</h2><i></i></div>
+<div class="prog" id="progList"></div></div>
+
+<div class="sec"><div class="secTitle"><h2>🌟 Mehman-e-Khususi</h2><i></i></div>
+<div class="guestGrid" id="guestList"></div></div>
+  <div class="sec"><div class="secTitle"><h2>🖼️ Madrasa Ki Jhalak</h2><i></i></div>
+<div class="gallery" id="galleryBox">
+<div class="gimg">🕌<small>Madrasa Building</small></div>
+<div class="gimg">📖<small>Hifz Class</small></div>
+<div class="gimg">🎓<small>Dastarbandi</small></div>
+</div>
+<p style="font-size:12px;color:#888;margin-top:8px;text-align:center">Admin se apni photos lagao - neeche Admin > Photos me link dalo</p></div>
+
+<div class="sec"><div class="secTitle"><h2>📍 Location & Rabta</h2><i></i></div>
+<div class="locCard"><h3 id="locTitle">Jamia Islah Binatul Mislemeen</h3><p id="locDesc">Gujranwala, Punjab, Pakistan<br>Madrasa Hall, Main Road ke paas<br>📞 <span id="phoneText">0300-1234567</span><br>🕓 Jalsa Time: <span id="timeText">4:00 PM - 9:00 PM</span></p>
+<div class="locBtns"><a class="btnGold" id="mapLink" href="https://maps.google.com/?q=Gujranwala" target="_blank">📍 Google Map</a><a class="btnWhite" id="callLink" href="tel:03001234567">📞 Call Karo</a></div></div></div>
+
+<div class="sec"><div class="secTitle"><h2>💚 Taawun / Donation</h2><i></i></div>
+<div class="donate"><h3>Madrasa Ke Liye Taawun Karen</h3><p id="donateText">Aap ke taawun se betiyon ki taleem, kitabein aur Madrasa ki tameer hoti hai. Allah aap ko jaza de.</p><p style="font-weight:800;color:#0A3D2A;margin-top:10px">JazzCash / Easypaisa:<br><span id="accountText" style="font-size:18px;letter-spacing:1px">0300-1234567 - Samama</span></p><button class="copyBtn" onclick="copyAcc()">📋 Number Copy Karo</button></div></div>
+
+<div class="sec" id="inviteSec" style="display:none"><div class="secTitle"><h2>💌 Dawat Nama</h2><i></i></div>
+<div class="invitation"><div class="bism" style="font-size:26px">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div><p>Assalam-o-Alaikum Warahmatullahi Wabarakatuhu</p><h2 id="invTitle">Jalsa-e-Dastarbandi</h2><h3 id="invMad">Jamia Islah Binatul Mislemeen</h3><p id="invDesc">Aap ko aur aap ke ghar walon ko dil ki gehraiyon se dawat di jati hai. Tashreef la kar sawab-e-darain hasil karen aur bachiyon ki hosla afzai farmayen.</p><p style="font-weight:800;color:#0A3D2A" id="invDate">📅 19 November 2026 • 4:00 PM</p><p>🌸 Khawateen ke liye alag parda ka intezam hai.<br>🍽️ Langar ka ehtemam hoga.</p><button class="copyBtn" onclick="shareWA()">📲 Ye Dawat WhatsApp Pe Bhejo</button></div></div>
+
+<div class="footer">Made with ❤️ for Deen • Jamia Islah Binatul Mislemeen • Gujranwala<br><span style="color:#D4AF37">✦ Allah Is Jalse Ko Qubool Farmaye - Ameen ✦</span></div>
+</div>
+
+<div class="floatBar"><button style="background:#fff;color:#0A3D2A" onclick="showInvite()">💌 Dawat</button><button style="background:#25D366;color:#fff" onclick="shareWA()">WhatsApp</button><button style="background:var(--gold);color:#222" onclick="openMap()">📍 Location</button></div>
+    <div id="adminModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;overflow-y:auto;padding:16px">
+<div style="background:#fff;max-width:560px;margin:20px auto;border-radius:20px;padding:20px">
+<div style="display:flex;justify-content:space-between;align-items:center"><h2 style="color:#0A3D2A">⚙️ Admin Panel</h2><button onclick="closeAdmin()" style="border:none;background:#eee;width:32px;height:32px;border-radius:50%;cursor:pointer">✕</button></div>
+<p style="font-size:12px;color:#888;margin-top:4px">Sab kuch yahan se badlo - Save dabate hi website update ho jayegi. Sab mobile me save rehta hai.</p>
+<div id="loginBox" style="margin-top:16px"><label>Password (1234)</label><input id="adminPass" type="password" placeholder="1234" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin-top:6px"><button onclick="checkPass()" style="width:100%;background:#0A3D2A;color:#fff;border:none;padding:12px;border-radius:10px;margin-top:10px;font-weight:700;cursor:pointer">Login</button></div>
+<div id="adminForm" style="display:none;margin-top:16px">
+<label>Madrasa Ka Naam</label><input id="f_madName" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Jalsa Ka Title (Hero)</label><input id="f_heroTitle" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Jalsa Ki Tafseel (Hero Desc)</label><textarea id="f_heroDesc" rows="3" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px"></textarea>
+<label>Jalsa Ki Date & Time (Countdown ke liye)</label><input id="f_date" type="datetime-local" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Date Line (Neeche dikhega)</label><input id="f_dateLine" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Madrasa Ki Tafseel</label><textarea id="f_madDesc" rows="3" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px"></textarea>
+<label>Phone Number</label><input id="f_phone" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Location / Address</label><input id="f_loc" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Google Map Link</label><input id="f_map" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Donation Account (JazzCash)</label><input id="f_account" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<label>Program - Har line me: Time | Title | Detail (Enter se naya)</label><textarea id="f_prog" rows="5" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px;font-size:13px"></textarea>
+<label>Mehman - Har line me: Naam | Kaam | Role</label><textarea id="f_guests" rows="4" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px;font-size:13px"></textarea>
+<label>Photos - 3 Image Links (alag alag line me)</label><textarea id="f_photos" rows="3" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px;font-size:13px"></textarea>
+<label>Naya Password (Admin)</label><input id="f_newPass" placeholder="Khali chhoro to 1234 hi rahega" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px">
+<button onclick="saveAdmin()" style="width:100%;background:#0A3D2A;color:#fff;border:none;padding:14px;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px">✅ SAVE KARO - Website Update Karo</button>
+<button onclick="resetAdmin()" style="width:100%;background:#fff;color:#c00;border:1px solid #f00;padding:10px;border-radius:12px;margin-top:10px;cursor:pointer">Reset Karo</button>
+</div></div></div>
+<script>
+let DEF={madName:"Jamia Islah Binatul Mislemeen",heroTitle:"Jalsa-e-Dastarbandi<br>& Mehfil-e-Naat",heroDesc:"Allah ke fazal se hamare Madrasa ka salana Jalsa hone ja raha hai. Aap sab ko dil se dawat hai. Zaroor tashreef layen aur bachiyon ki hosla afzai karen.",date:"2026-11-19T16:00",dateLine:"📅 19 November 2026 • 🕓 4:00 PM • 📍 Madrasa Hall",madDesc:"Bachiyon ke liye Deeni Taleem ka idara. Hifz-e-Quran, Tajweed, Dars-e-Nizami aur Akhlaq ki tarbiyat. Yahan betiyan Deen aur Duniya dono ki roshni paati hain.",phone:"0300-1234567",loc:"Gujranwala, Punjab, Pakistan",map:"https://maps.google.com/?q=Gujranwala",account:"0300-1234567 - Samama",prog:"4:00 PM | Tilawat-e-Quran | Hafiza Bachiyon ki taraf se Tilawat\n4:30 PM | Naat Sharif | Mehfil-e-Naat - Bachiyan aur Mehman\n5:30 PM | Bayan | Hazrat Mufti Sahab ka Khususi Bayan\n6:30 PM | Dastarbandi | Hifz Mukammal Karne Wali Bachiyon ki Dastarbandi\n7:30 PM | Dua & Langar | Ijtimai Dua aur Langar",guests:"Mufti Ahmad Raza | Chief Scholar | Khususi Bayan\nQari Bilal Ahmed | Naat Khawan | Mehfil-e-Naat\nUstadha Fatima | Mohtamima | Madrasa",photos:"",pass:"1234"};
+let S={};try{S=JSON.parse(localStorage.getItem('madrasaJalsa')||'{}')}catch(e){S={}}
+function get(k){return S[k]!==undefined&&S[k]!==""?S[k]:DEF[k]}
+function apply(){
+document.getElementById('topName').textContent=get('madName');
+document.getElementById('madName').textContent=get('madName');
+document.getElementById('heroTitle').innerHTML=get('heroTitle');
+document.getElementById('heroDesc').textContent=get('heroDesc');
+document.getElementById('dateLine').textContent=get('dateLine');
+document.getElementById('madDesc').textContent=get('madDesc');
+document.getElementById('phoneText').textContent=get('phone');
+document.getElementById('locDesc').innerHTML=get('loc')+"<br>📞 <span>"+get('phone')+"</span><br>🕓 Jalsa Time: 4:00 PM - 9:00 PM";
+document.getElementById('locTitle').textContent=get('madName');
+document.getElementById('accountText').textContent=get('account');
+document.getElementById('mapLink').href=get('map');
+document.getElementById('callLink').href="tel:"+get('phone');
+document.getElementById('invTitle').textContent=get('heroTitle').replace(/<[^>]*>/g,' ');
+document.getElementById('invMad').textContent=get('madName');
+document.getElementById('invDate').textContent=get('dateLine');
+let prog=get('prog').split('\n').filter(x=>x.trim());
+document.getElementById('progList').innerHTML=prog.map(l=>{let p=l.split('|');return `<div class="progItem"><div class="timeBox"><b>${(p[0]||'').trim()}</b></div><div><h4>${(p[1]||'').trim()}</h4><p>${(p[2]||'').trim()}</p></div></div>`}).join('');
+let guests=get('guests').split('\n').filter(x=>x.trim());
+document.getElementById('guestList').innerHTML=guests.map(l=>{let p=l.split('|');let nm=(p[0]||'').trim();return `<div class="guest"><div class="av">${nm.charAt(0)||'M'}</div><h4>${nm}</h4><p>${(p[1]||'').trim()}</p><span>${(p[2]||'').trim()}</span></div>`}).join('');
+let ph=get('photos').split('\n').filter(x=>x.trim());
+if(ph.length>0){document.getElementById('galleryBox').innerHTML=ph.slice(0,3).map((u,i)=>`<div class="gimg"><img src="${u.trim()}" onerror="this.parentElement.innerHTML='🕌'"><small>Madrasa ${i+1}</small></div>`).join('');}
+}
+  function tick(){let target=new Date(get('date')).getTime();let now=Date.now();let diff=target-now;if(diff<0)diff=0;
+let d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+document.getElementById('cD').textContent=String(d).padStart(2,'0');document.getElementById('cH').textContent=String(h).padStart(2,'0');document.getElementById('cM').textContent=String(m).padStart(2,'0');document.getElementById('cS').textContent=String(s).padStart(2,'0');}
+setInterval(tick,1000);tick();apply();
+function showInvite(){let el=document.getElementById('inviteSec');el.style.display=el.style.display==='none'?'block':'none';if(el.style.display==='block')el.scrollIntoView({behavior:'smooth'});}
+function openMap(){window.open(get('map'),'_blank');}
+function copyAcc(){navigator.clipboard.writeText(get('account')).then(()=>alert('Copy ho gaya! '+get('account')));}
+function shareWA(){let txt=`🕌 *${get('madName')}*%0A%0A✦ *${get('heroTitle').replace(/<[^>]*>/g,' ')}* ✦%0A%0A${get('heroDesc')}%0A%0A${get('dateLine')}%0A📍 ${get('loc')}%0A📞 ${get('phone')}%0A%0AAap ko dil se dawat hai. Zaroor tashreef layen!%0A%0A${location.href}`;window.open('https://wa.me/?text='+txt,'_blank');}
+function openAdmin(){document.getElementById('adminModal').style.display='block';document.getElementById('loginBox').style.display='block';document.getElementById('adminForm').style.display='none';}
+function closeAdmin(){document.getElementById('adminModal').style.display='none';}
+function checkPass(){let p=document.getElementById('adminPass').value;if(p===get('pass')){document.getElementById('loginBox').style.display='none';document.getElementById('adminForm').style.display='block';fillForm();}else alert('Ghalat Password!');}
+function fillForm(){document.getElementById('f_madName').value=get('madName');document.getElementById('f_heroTitle').value=get('heroTitle');document.getElementById('f_heroDesc').value=get('heroDesc');document.getElementById('f_date').value=get('date');document.getElementById('f_dateLine').value=get('dateLine');document.getElementById('f_madDesc').value=get('madDesc');document.getElementById('f_phone').value=get('phone');document.getElementById('f_loc').value=get('loc');document.getElementById('f_map').value=get('map');document.getElementById('f_account').value=get('account');document.getElementById('f_prog').value=get('prog');document.getElementById('f_guests').value=get('guests');document.getElementById('f_photos').value=get('photos');}
+function saveAdmin(){S.madName=document.getElementById('f_madName').value;S.heroTitle=document.getElementById('f_heroTitle').value;S.heroDesc=document.getElementById('f_heroDesc').value;S.date=document.getElementById('f_date').value;S.dateLine=document.getElementById('f_dateLine').value;S.madDesc=document.getElementById('f_madDesc').value;S.phone=document.getElementById('f_phone').value;S.loc=document.getElementById('f_loc').value;S.map=document.getElementById('f_map').value;S.account=document.getElementById('f_account').value;S.prog=document.getElementById('f_prog').value;S.guests=document.getElementById('f_guests').value;S.photos=document.getElementById('f_photos').value;let np=document.getElementById('f_newPass').value;if(np) S.pass=np;localStorage.setItem('madrasaJalsa',JSON.stringify(S));apply();tick();alert('✅ Ho gaya! Website update ho gayi!');closeAdmin();}
+function resetAdmin(){if(confirm('Sab reset kar du?')){localStorage.removeItem('madrasaJalsa');S={};apply();alert('Reset ho gaya');closeAdmin();}}
+</script>
+</body>
+</html>
