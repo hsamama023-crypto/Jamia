@@ -395,25 +395,14 @@ a{color:inherit;text-decoration:none}
   /* ---- admin ---- */
   function applySaved(){
     var t=sget('title'),d=sget('date'),a=sget('audio');
-    if(t){$('heroTitle').textContent=t;$('spTitle').textContent=t;$('editTitle').value=t}
-    if(d){$('dateLine').textContent=d;$('editDate').value=d}
-    if(a){$('audio6').src=a;$('editAudio').value=a}
-  }
-  applySaved();
-  $('navAdmin').addEventListener('click',function(){
-    var p=prompt('Admin Password likhen:');
-    if(p==='1234'){$('adminPanel').style.display='block'}
-    else if(p!==null){alert('Galat Password!')}
-  });
-  $('closeAdmin').addEventListener('click',function(){$('adminPanel').style.display='none'});
-  $('saveAdmin').addEventListener('click',function(){
-    sset('title',$('editTitle').value);sset('date',$('editDate').value);sset('audio',$('editAudio').value);
-    applySaved();alert('Save ho gaya ✅');$('adminPanel').style.display='none';
-  });
-  $('resetAdmin').addEventListener('click',function(){
-    try{localStorage.removeItem('title');localStorage.removeItem('date');localStorage.removeItem('audio')}catch(e){}
-    location.reload();
-  });
+    if(t){$('heroTitle').textContent=t;$('spTitle').textContent=t}
+    if(d){$('dateLine').textContent=d}
+    if(a){$('audio6').src=a}
+    // Naam wale - agar id lagi hogi to change honge
+    var map={sadarat:'n1',naqabat:'n2',m1:'n3',m2:'n4',m3:'n5',m4:'n6',u1:'n7',u2:'n8',u3:'n9',k1:'n10',k2:'n11',phone1:'p1',phone2:'p2'};
+    for(var k in map){var v=sget(k); if(v && $(map[k])) $(map[k]).textContent=v;}
+}
+applySaved();
 })();
 </script>
 </body>
