@@ -2,205 +2,419 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04231c">
 <title>ادارہ اصلاح البنات المسلمین - اجتماع برائے خواتین</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 <style>
+:root{
+  --bg:#04231c; --bg2:#073b2f; --gold:#e6c36a; --gold2:#b8902f; --cream:#fff6dc; --rose:#e0457b; --ink:#0d1f1a;
+  --font:'Noto Nastaliq Urdu','Jameel Noori Nastaleeq',serif;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Nastaliq Urdu',serif;background:#0a0a2e;color:#fff;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--cream);overflow-x:hidden;padding-bottom:78px;line-height:2}
+body.lock{overflow:hidden;height:100vh}
 a{color:inherit;text-decoration:none}
-/* TOP BAR APP JESA */
-.topbar{position:sticky;top:0;z-index:99;background:rgba(10,10,46,.95);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:2px solid gold}
-.topbar b{font-size:18px;color:#FFD700}
-.topbar span{background:#FFD700;color:#000;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:900;font-family:Poppins}
-.hero{background:linear-gradient(180deg,#1a1aff,#0a0a2e 70%),url('https://images.unsplash.com/photo-1519817650390-64a93db51149?w=900');background-size:cover;background-blend-mode:overlay;padding:22px 14px 10px;text-align:center;border-radius:0 0 30px 30px;border-bottom:4px solid #FFD700;box-shadow:0 10px 40px rgba(0,0,0,.5)}
-.hero .badge{display:inline-block;background:#FF1493;color:#fff;padding:6px 18px;border-radius:30px;font-size:14px;margin-bottom:10px}
-.hero h1{font-size:32px;line-height:1.9;color:#fff;text-shadow:2px 2px 0 #000}
-.hero h1 span{color:#FFD700}
-.hero p{font-size:15px;color:#ffe; margin-top:6px;line-height:2}
-.main{padding:14px;max-width:520px;margin:auto}
-/* BIG IJTIMA CARD */
-.ijtima{background:radial-gradient(circle at center,#00c853,#006400);border:5px solid gold;border-radius:50%;width:280px;height:280px;margin:18px auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 6px #fff,0 0 40px gold;position:relative}
-.ijtima small{background:#000080;color:#fff;padding:2px 10px;border-radius:10px;font-size:12px}
-.ijtima h2{font-size:78px;line-height:1.2;margin:2px 0}
-.ijtima p{font-size:22px;line-height:1.6}
-.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.chips span{background:#fff;color:#000;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700}
-.chips span:nth-child(2){background:#FFD700}
-.chips span:nth-child(3){background:#FF1493;color:#fff}
-/* INFO CARDS */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.card{background:#fff;color:#111;border-radius:20px;padding:16px 10px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.3);border-top:6px solid #FF1493}
-.card:nth-child(2){border-color:#0000ff}
-.card:nth-child(3){border-color:#FF0000}
-.card:nth-child(4){border-color:#00c853}
-.card h3{font-size:20px;line-height:2;color:#000}
-.card p{font-size:14px;line-height:1.9}
-.card.red{background:#FF0000;color:#fff}
-.card.blue{background:#0000ff;color:#fff}
-.card.green{background:#008000;color:#fff}
-.card.pink{background:#FF1493;color:#fff}
-.card.yellow{background:#FFD700;color:#000}
-.card.purple{background:#800080;color:#fff}
-.card.dark{background:#111;color:#fff}
-/* VOICE */
-.voice{background:linear-gradient(135deg,#FF1493,#800080);border-radius:22px;padding:18px;text-align:center;margin-top:16px;border:2px solid #fff}
-.voice h3{font-size:22px}
-.voice p{font-size:13px;opacity:.9}
-.voice audio{width:100%;margin-top:12px;filter:invert(1)}
-.voice button{background:#FFD700;color:#000;border:none;padding:12px 22px;border-radius:30px;font-weight:900;font-size:16px;margin-top:10px;width:100%;cursor:pointer}
-.speakers{margin-top:16px}
-.speakers h2{text-align:center;color:#FFD700;font-size:24px;margin-bottom:10px}
-.speaker{background:#fff;color:#111;border-radius:16px;padding:12px;margin-bottom:10px;display:flex;gap:10px;align-items:center;border-right:6px solid gold}
-.speaker .icon{width:48px;height:48px;background:#FF1493;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.speaker b{font-size:17px;line-height:1.8;display:block}
-.speaker span{font-size:13px;color:#666}
-.footer{background:#000;padding:18px;text-align:center;border-radius:22px 22px 0 0;margin-top:16px}
-.footer h3{color:#FFD700}
-.footer .nums{display:flex;gap:10px;justify-content:center;margin-top:10px}
-.footer .nums div{background:#fff;color:#000;padding:10px;border-radius:14px;font-family:Poppins;font-weight:900}
-.footer .nums small{display:block;font-family:'Noto Nastaliq Urdu';font-weight:400}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:10px 0 14px;border-top:3px solid gold;z-index:99}
-.bottom-nav button{border:none;background:none;font-size:13px;font-weight:700;color:#111;cursor:pointer}
-.bottom-nav button.active{color:#FF1493}
-body{padding-bottom:70px}
-/* ADMIN */
-#adminPanel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;padding:20px;overflow:auto;color:#fff}
-#adminPanel input,#adminPanel textarea{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:none;font-family:'Noto Nastaliq Urdu';font-size:16px}
-#adminPanel button{background:#FFD700;color:#000;border:none;padding:12px;border-radius:10px;width:100%;font-weight:900;margin-top:8px;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.gold-text{background:linear-gradient(100deg,#8a6a1c 10%,#f7e29a 30%,#e6c36a 50%,#fff3c0 62%,#b8902f 90%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold);animation:shine 5s linear infinite}
+@keyframes shine{0%{background-position:220% 0}100%{background-position:-120% 0}}
+
+/* ============ INTRO SPLASH ============ */
+#splash{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;
+  background:radial-gradient(ellipse at 50% 35%,#0b5a45 0%,#04231c 62%,#021410 100%);overflow:hidden;
+  transition:opacity 1s ease,transform 1.2s cubic-bezier(.7,0,.2,1),visibility 0s 1.2s}
+#splash.out{opacity:0;transform:scale(1.15);visibility:hidden;pointer-events:none}
+#fx{position:absolute;inset:0;width:100%;height:100%}
+.sp-inner{position:relative;z-index:2;padding:20px;width:100%;max-width:520px}
+.emblem{width:210px;height:210px;margin:0 auto 6px;position:relative}
+.emblem svg{width:100%;height:100%;overflow:visible}
+.ring{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-dasharray:700;stroke-dashoffset:700;animation:draw 2.4s .2s ease forwards}
+.ring.r2{animation-delay:.6s;stroke-width:.9}
+.star{transform-origin:100px 100px;animation:spin 40s linear infinite}
+.star.rev{animation-direction:reverse;animation-duration:60s}
+.star path{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.6s .9s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.emblem .mosque{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:62px;opacity:0;transform:scale(.4);animation:pop 1s 1.6s cubic-bezier(.2,1.4,.4,1) forwards;filter:drop-shadow(0 0 18px rgba(230,195,106,.8))}
+@keyframes pop{to{opacity:1;transform:scale(1)}}
+.bism{font-size:22px;opacity:0;animation:up 1s 2s ease forwards}
+.sp-title{font-size:clamp(30px,8.5vw,46px);line-height:2;font-weight:700;opacity:0;animation:up 1.1s 2.4s ease forwards}
+.sp-sub{font-size:clamp(15px,4.2vw,19px);color:#d9e8df;opacity:0;animation:up 1.1s 2.9s ease forwards}
+.sp-date{display:inline-block;margin-top:14px;padding:6px 26px;border:1px solid var(--gold);border-radius:40px;font-size:16px;color:var(--gold);opacity:0;animation:up 1.1s 3.3s ease forwards;letter-spacing:.5px}
+.enter{margin-top:26px;border:0;cursor:pointer;font-family:var(--font);font-size:19px;font-weight:700;color:#2b1f00;padding:10px 46px;border-radius:50px;
+  background:linear-gradient(135deg,#fff0b0,#e6c36a 45%,#b8902f);box-shadow:0 0 0 0 rgba(230,195,106,.6),0 10px 30px rgba(0,0,0,.5);
+  opacity:0;animation:up 1s 3.7s ease forwards,pulse 2.2s 4.7s infinite;position:relative;overflow:hidden}
+.enter::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:sweep 3s 4.7s infinite}
+@keyframes sweep{0%{left:-60%}60%,100%{left:130%}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(230,195,106,.6),0 10px 30px rgba(0,0,0,.5)}70%{box-shadow:0 0 0 18px rgba(230,195,106,0),0 10px 30px rgba(0,0,0,.5)}100%{box-shadow:0 0 0 0 rgba(230,195,106,0),0 10px 30px rgba(0,0,0,.5)}}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.skip{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));left:14px;z-index:3;background:none;border:1px solid rgba(230,195,106,.5);color:var(--gold);font-family:var(--font);font-size:13px;padding:2px 14px;border-radius:20px;cursor:pointer}
+.curtain{position:absolute;top:0;bottom:0;width:50.5%;background:linear-gradient(180deg,#0a4a3a,#04231c);z-index:5;pointer-events:none;transform:translateX(0);transition:transform 1.3s cubic-bezier(.77,0,.18,1)}
+.curtain.l{left:0;border-right:2px solid var(--gold)}
+.curtain.r{right:0;border-left:2px solid var(--gold)}
+#splash.opening .curtain.l{transform:translateX(-101%)}
+#splash.opening .curtain.r{transform:translateX(101%)}
+.curtain{transform:translateX(-101%)}
+.curtain.r{transform:translateX(101%)}
+  /* ============ TOP BAR ============ */
+.topbar{position:sticky;top:0;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;
+  background:rgba(4,35,28,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(230,195,106,.55)}
+.topbar b{font-size:17px;color:var(--gold)}
+.live{display:flex;align-items:center;gap:7px;font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:1px}
+.live i{width:8px;height:8px;border-radius:50%;background:#2ee59d;box-shadow:0 0 0 0 #2ee59d;animation:blip 1.8s infinite}
+@keyframes blip{70%{box-shadow:0 0 0 9px rgba(46,229,157,0)}100%{box-shadow:0 0 0 0 rgba(46,229,157,0)}}
+
+/* ============ HERO ============ */
+.hero{position:relative;text-align:center;padding:30px 16px 54px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 0%,#0d6a52 0%,var(--bg2) 45%,var(--bg) 100%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.09;background-image:
+  repeating-linear-gradient(45deg,var(--gold) 0 1px,transparent 1px 26px),repeating-linear-gradient(-45deg,var(--gold) 0 1px,transparent 1px 26px)}
+.hero>*{position:relative}
+.loc{display:inline-block;padding:2px 20px;border:1px solid var(--gold);border-radius:40px;font-size:13px;color:var(--gold);background:rgba(0,0,0,.25)}
+.hero h1{font-size:clamp(30px,8vw,40px);line-height:2.1;margin:8px 0 2px}
+.hero .sub{font-size:15px;color:#d9e8df}
+.divider{display:flex;align-items:center;gap:10px;justify-content:center;margin:12px auto;max-width:300px;color:var(--gold)}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.divider::after{transform:scaleX(-1)}
+
+/* ============ IJTIMA EMBLEM ============ */
+.ij-wrap{position:relative;width:292px;height:292px;margin:22px auto 8px}
+.ij-orbit{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(230,195,106,.7);animation:spin 36s linear infinite}
+.ij-orbit::before,.ij-orbit::after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold);top:-6px;left:calc(50% - 6px)}
+.ij-orbit::after{top:auto;bottom:-6px}
+.ij{position:absolute;inset:16px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 28%,#17a07c,#0a5a44 55%,#05382b);border:4px solid var(--gold);
+  box-shadow:inset 0 0 40px rgba(0,0,0,.45),0 0 60px rgba(230,195,106,.35);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.ij small{font-size:13px;background:var(--gold);color:#2b1f00;padding:0 14px;border-radius:12px;font-weight:700}
+.ij h2{font-size:72px;line-height:1.5;font-weight:700}
+.ij p{font-size:19px;line-height:1.6;color:var(--cream)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 0}
+.chips span{padding:2px 16px;border-radius:30px;font-size:14px;border:1px solid var(--gold);color:var(--gold);background:rgba(0,0,0,.22)}
+.chips span:nth-child(1){background:var(--gold);color:#2b1f00;font-weight:700}
+
+/* ============ SECTIONS ============ */
+.main{padding:0 14px;max-width:520px;margin:auto}
+.sec-title{text-align:center;font-size:24px;margin:34px 0 14px;line-height:2}
+.panel{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid rgba(230,195,106,.45);border-radius:22px;padding:18px 14px;text-align:center;position:relative}
+.panel::before{content:"";position:absolute;inset:6px;border:1px solid rgba(230,195,106,.2);border-radius:17px;pointer-events:none}
+.panel.intro{margin-top:-30px;z-index:2;font-size:16px;background:linear-gradient(160deg,#0b4d3c,#06281f)}
+
+/* countdown */
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;direction:ltr}
+.cd div{background:rgba(0,0,0,.35);border:1px solid rgba(230,195,106,.4);border-radius:14px;padding:8px 2px}
+.cd b{display:block;font-family:'Cinzel',serif;font-size:26px;color:var(--gold);line-height:1.3}
+.cd span{font-size:12px;color:#cfe3d8;direction:rtl;display:block;line-height:1.6}
+.dategrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dategrid .panel h3{font-size:22px;line-height:2}
+.dategrid .panel p{font-size:14px;line-height:1.9;color:#d9e8df}
+
+/* voice */
+.voice{margin-top:16px;background:linear-gradient(135deg,#8c1d4d,#4a0f33);border-color:#f3a3c4}
+.voice h3{font-size:21px}
+.voice p{font-size:13px;opacity:.9;line-height:1.9}
+.voice audio{width:100%;margin-top:10px;border-radius:30px}
+.btn{display:block;width:100%;border:0;cursor:pointer;font-family:var(--font);font-weight:700;font-size:16px;color:#2b1f00;padding:8px 20px;border-radius:40px;margin-top:10px;background:linear-gradient(135deg,#fff0b0,#e6c36a 45%,#b8902f)}
+.btn:active{transform:scale(.98)}
+  /* speakers */
+.lead{display:grid;gap:12px}
+.lead .panel{padding:16px 12px}
+.lead .tag{display:inline-block;font-size:13px;padding:0 16px;border-radius:20px;background:var(--gold);color:#2b1f00;font-weight:700}
+.lead h3{font-size:22px;line-height:2.1;margin-top:4px}
+.lead.red .panel{background:linear-gradient(160deg,#a01616,#5e0b0b);border-color:#ff9c9c}
+.lead.yel .panel{background:linear-gradient(160deg,#f4d35e,#c79a1a);border-color:#fff3b0;color:#2b1f00}
+.lead.yel .tag{background:#2b1f00;color:var(--gold)}
+.sp{display:flex;align-items:center;gap:12px;padding:10px 14px;margin-bottom:10px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(230,195,106,.35);border-right:5px solid var(--gold)}
+.sp .ic{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;background:linear-gradient(135deg,var(--rose),#8c1d4d)}
+.sp b{display:block;font-size:17px;line-height:1.9;font-weight:600}
+.sp span{font-size:13px;color:var(--gold);line-height:1.7;display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.two .panel h3{font-size:18px;line-height:2.1}
+.two .panel p{font-size:13px;color:#d9e8df;line-height:1.9}
+.dept{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dept span{padding:6px 4px;border-radius:14px;font-size:16px;border:1px solid var(--gold);background:rgba(0,0,0,.28);text-align:center;line-height:1.9}
+.feast{margin-top:16px;font-size:19px;line-height:2.1}
+
+/* footer */
+.footer{margin:30px -14px 0;padding:24px 16px 26px;text-align:center;border-radius:28px 28px 0 0;background:linear-gradient(180deg,#02150f,#000);border-top:2px solid var(--gold)}
+.footer h3{color:var(--gold);font-size:18px}
+.footer .nm{font-size:22px;line-height:2.1}
+.nums{display:flex;gap:10px;justify-content:center;margin-top:12px}
+.nums a{flex:1;max-width:210px;background:linear-gradient(135deg,#fff0b0,#e6c36a 50%,#b8902f);color:#2b1f00;padding:6px 8px;border-radius:16px;font-weight:700}
+.nums a b{display:block;font-family:'Cinzel',serif;font-size:19px;line-height:1.6;direction:ltr}
+.nums a small{display:block;font-size:12px;line-height:1.7}
+.note{font-size:12px;margin-top:14px;line-height:2;color:#cfe3d8}
+
+/* bottom nav */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:95;display:flex;justify-content:space-around;padding:8px 0 calc(10px + env(safe-area-inset-bottom,0px));background:rgba(4,35,28,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--gold)}
+.bottom-nav button{border:0;background:none;color:var(--cream);font-family:var(--font);font-size:13px;cursor:pointer;line-height:1.7;padding:0 10px}
+.bottom-nav button.active{color:var(--gold)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+
+/* admin */
+#adminPanel{display:none;position:fixed;inset:0;z-index:3000;background:rgba(2,12,9,.96);padding:22px 18px;overflow:auto}
+#adminPanel .box{max-width:480px;margin:auto}
+#adminPanel label{font-size:14px;color:var(--gold)}
+#adminPanel input{width:100%;padding:10px 12px;margin:4px 0 10px;border-radius:12px;border:1px solid var(--gold2);background:#fff;color:#111;font-family:var(--font);font-size:15px}
+#adminPanel .btn.alt{background:#fff}
+#adminPanel .btn.close{background:var(--rose);color:#fff}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}
+  .rv{opacity:1;transform:none}
+}
 </style>
 </head>
-<body>
+<body class="lock">
+  <!-- ================= INTRO PAGE ================= -->
+<section id="splash" aria-label="تعارفی صفحہ">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="curtain l"></div><div class="curtain r"></div>
+  <button class="skip" id="skipBtn" type="button">Skip</button>
+  <div class="sp-inner">
+    <div class="emblem" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <circle class="ring" cx="100" cy="100" r="96"/>
+        <circle class="ring r2" cx="100" cy="100" r="86"/>
+        <g class="star"><path d="M100 22 L178 100 L100 178 L22 100 Z"/></g>
+        <g class="star rev"><path d="M45 45 L155 45 L155 155 L45 155 Z"/></g>
+      </svg>
+      <div class="mosque">🕌</div>
+    </div>
+    <div class="bism gold-text">بسم اللہ الرحمن الرحیم</div>
+    <h1 class="sp-title gold-text" id="spTitle">ادارہ اصلاح البنات المسلمین</h1>
+    <p class="sp-sub">جلیل ٹاؤن گلی نمبر 11 چنداقلعہ گوجرانوالہ<br>نچلے پورشن کے افتتاحی پروگرام کے موقع پر</p>
+    <div class="sp-date">اجتماع برائے خواتین • 29 نومبر 2026</div><br>
+    <button class="enter" id="enterBtn" type="button">دعوت نامہ کھولیں</button>
+  </div>
+</section>
 
-<div class="topbar"><b>🕌 ادارہ اصلاح البنات</b><span>APP • LIVE</span></div>
+<!-- ================= MAIN PAGE ================= -->
+<div class="topbar"><b>🕌 ادارہ اصلاح البنات</b><div class="live"><i></i>LIVE</div></div>
 
-<div class="hero">
-<div class="badge">✦ جلیل ٹاؤن گلی نمبر 11 چنزار اقل... ✦</div>
-<h1>ادارہ اصلاح البنات المسلمین<br><span>جلیل ٹاؤن گلی نمبر 11</span></h1>
-<p>ادارہ اصلاح البنات المسلمین نچلے پورشن کی<br>افتتاحی پروگرام کے پُر مسرت موقع پر</p>
-</div>
+<header class="hero" id="top">
+  <span class="loc">✦ جلیل ٹاؤن گلی نمبر 11 چنداقلعہ گوجرانوالہ ✦</span>
+  <h1 class="gold-text" id="heroTitle">ادارہ اصلاح البنات المسلمین</h1>
+  <div class="divider">❖</div>
+  <p class="sub">نچلے پورشن کے افتتاحی پروگرام کے پُر مسرت موقع پر</p>
+
+  <div class="ij-wrap">
+    <div class="ij-orbit"></div>
+    <div class="ij">
+      <small>زیر صدارت</small>
+      <h2 class="gold-text">اجتماع</h2>
+      <p>برائے خواتین</p>
+    </div>
+  </div>
+  <div class="chips"><span>تبلیغی</span><span>اصلاحی</span><span>تلاوت</span><span>نعت</span></div>
+</header>
 
 <div class="main">
 
-<div class="ijtima">
-<small>زیر صدارت</small>
-<h2>اجتماع</h2>
-<p>برائے خواتین<br>اجتماع</p>
+  <div class="panel intro rv">
+    <p>اجتماع کی تقریب میں شرکت کیلئے آپ سب خواتین کو دلی دعوت ہے</p>
+    <div class="cd" id="cd" aria-label="اجتماع میں باقی وقت">
+      <div><b id="cdD">00</b><span>دن</span></div>
+      <div><b id="cdH">00</b><span>گھنٹے</span></div>
+      <div><b id="cdM">00</b><span>منٹ</span></div>
+      <div><b id="cdS">00</b><span>سیکنڈ</span></div>
+    </div>
+  </div>
+
+  <h2 class="sec-title gold-text rv">تاریخ و وقت</h2>
+  <div class="dategrid rv">
+    <div class="panel"><h3 class="gold-text">29 نومبر</h3><p>2026</p></div>
+    <div class="panel"><h3 class="gold-text">بروز اتوار</h3><p>صبح 10 بجے سے<br>3 بجے تک</p></div>
+  </div>
+  <p class="rv" style="text-align:center;font-size:14px;margin-top:10px;color:var(--gold)" id="dateLine">29 نومبر 2026 - بروز اتوار - صبح 10 سے 3 بجے تک</p>
+
+  <div class="panel voice rv" id="voiceBox">
+    <h3>🎙️ مدیرہ ادارہ کا پیغام</h3>
+    <p>Voice - audio6</p>
+    <audio id="audio6" controls preload="none" src="audio6.mp3"></audio>
+    <button class="btn" type="button" id="playBtn">▶ پیغام سنیں</button>
+    <p id="audioMsg" style="margin-top:8px;font-size:12px">اگر آواز نہ چلے تو audio6.mp3 فائل اسی فولڈر میں رکھیں</p>
+  </div>
+
+  <h2 class="sec-title gold-text rv">زیر صدارت</h2>
+  <div class="sp rv" style="border-right-color:var(--rose)"><div class="ic">🌸</div><div><b>محترمہ ام عبداللہ صاحبہ</b><span>جلیل ٹاؤن</span></div></div>
+
+  <h2 class="sec-title gold-text rv">نقابت</h2>
+  <div class="sp rv"><div class="ic">🌹</div><div><b>محترمہ حافظہ بیگم محمد شوکت صاحبہ</b><span>نقابت</span></div></div>
+
+  <h2 class="sec-title gold-text rv">مہمانانِ گرامی</h2>
+  <div class="sp rv"><div class="ic">📖</div><div><b>محترمہ ام صدیق الرحمن صاحبہ</b><span>مہمانِ گرامی</span></div></div>
+  <div class="sp rv"><div class="ic">💐</div><div><b>محترمہ بیگم حافظ محمد عمار صاحبہ</b><span>مہمانِ گرامی</span></div></div>
+  <div class="sp rv"><div class="ic">🌷</div><div><b>محترمہ مسز خان بہادر صاحبہ</b><span>جلیل ٹاؤن</span></div></div>
+  <div class="sp rv"><div class="ic">✨</div><div><b>محترمہ بیگم رحمت اللہ صاحبہ</b><span>مہمانِ گرامی</span></div></div>
+
+  <h2 class="sec-title gold-text rv">اساتذہ جامعہ ھذا</h2>
+  <div class="sp rv"><div class="ic">🎓</div><div><b>محترمہ مسز محمد احمد صاحبہ</b><span>معلمہ جامعہ ھذا</span></div></div>
+  <div class="sp rv"><div class="ic">🌺</div><div><b>محترمہ میاں بیگم محمد معاذ صاحبہ</b><span>مہمانِ گرامی</span></div></div>
+  <div class="sp rv"><div class="ic">🌼</div><div><b>محترمہ ام محمد صاحبہ</b><span>مہمانِ گرامی</span></div></div>
+
+  <h2 class="sec-title gold-text rv">خطیبی خطاب</h2>
+  <div class="lead red rv"><div class="panel"><span class="tag">خطاب</span><h3>محترمہ واعظہ خوش الحان باجی جان<br>رضیہ ادریس صاحبہ</h3></div></div>
+  <div class="lead yel rv" style="margin-top:12px"><div class="panel"><span class="tag">خصوصی خطاب</span><h3>عظیم معلمہ باجی جان سدرہ<br>عروج صاحبہ</h3></div></div>
+
+  <h2 class="sec-title gold-text rv">شعبہ جات ادارہ ھذا</h2>
+  <div class="panel rv">
+    <div class="dept"><span>ناظرۃ القرآن</span><span>تجوید و قرأت</span><span>ترجمہ و تفسیر</span><span>حدیث نبوی</span></div>
+    <p style="margin-top:12px;font-size:14px;color:var(--gold)">تمام کلاسز بعد نماز عصر ہوتی ہیں</p>
+  </div>
+  <div class="panel rv feast">ضیافت کا معقول انتظام ہوگا<br>ان شاء اللہ<br><span style="font-size:14px;color:var(--gold)">خواتین کیلئے</span></div>
+
+  <footer class="footer rv" id="contact">
+    <h3>الداعی الی الخیر</h3>
+    <p class="nm gold-text">ام معاذ<br>بیگم قاری محمد رفیق</p>
+    <p style="font-size:14px">مدیرہ ادارہ ھذا</p>
+    <div class="nums">
+      <a href="tel:03054940552"><b>0305 4940552</b><small>رابطہ</small></a>
+      <a href="tel:03054531595"><b>0305 4531595</b><small>آن لائن اسلامی کورس</small></a>
+    </div>
+    <p class="note">آن لائن تعلیم اسلامی بیٹیاں — آن لائن کلاسز کیلئے رابطہ کریں</p>
+  </footer>
 </div>
 
-<div class="chips"><span>تلاوت</span><span>نعت</span><span>طلاعی</span></div>
+<nav class="bottom-nav" aria-label="مینو">
+  <button class="active" type="button" data-go="top">🏠 ہوم</button>
+  <button type="button" id="navVoice">🎙️ آواز</button>
+  <button type="button" data-go="contact">📞 رابطہ</button>
+  <button type="button" id="navShare">📤 شیئر</button>
+  <button type="button" id="navAdmin">⚙️ Admin</button>
+</nav>
 
-<!-- DATE TIME -->
-<div class="grid">
-<div class="card blue"><h3>29 نومبر</h3><p>2026</p></div>
-<div class="card red"><h3>بروز اتوار</h3><p>صبح 10 بجے سے<br>3 بجے تک</p></div>
-</div>
-
-<!-- VOICE - AUDIO6 -->
-<div class="voice" id="voiceBox">
-<h3>🎙️ مديرة جامعہ کا پیغام</h3>
-<p>مديرة جامعہ - Voice - audio6</p>
-<audio id="audio6" controls preload="auto" src="audio6.mp3"></audio>
-<button onclick="document.getElementById('audio6').play()">▶️ پیغام سنیں - Play Voice</button>
-<p style="margin-top:8px;font-size:12px">اگر آواز نہ چلے تو audio6.mp3 فائل اسی فولڈر میں رکھیں</p>
-</div>
-
-<!-- SPEAKERS - ORIGINAL TEXT SAME -->
-<div class="speakers">
-<h2>🌸 مہمانانِ گرامی 🌸</h2>
-
-<div class="speaker"><div class="icon">🌸</div><div><b>محترمہ ام عبداللہ صاحبہ</b><span>جلیل ٹاؤن - مہمانِ خصوصی</span></div></div>
-
-<div class="speaker"><div class="icon">🌹</div><div><b>محترمہ حافظہ بی بی محمود کوثر صاحبہ</b><span>نقابت</span></div></div>
-
-<div class="speaker"><div class="icon">📖</div><div><b>محترمہ ام صدیق احمد صاحبہ</b><span>مہمان گرامی</span></div></div>
-
-<div class="speaker"><div class="icon">💐</div><div><b>محترمہ بیگم حافظ محمد عمران صاحبہ</b><span>مہمان گرامی</span></div></div>
-
-<div class="speaker"><div class="icon">🌷</div><div><b>محترمہ مسز خان بہادر</b><span>جلیل ٹاؤن</span></div></div>
-
-<div class="speaker"><div class="icon">✨</div><div><b>محترمہ بیگم رحمت اللہ صاحبہ</b><span>مہمان گرامی</span></div></div>
-
-</div>
-
-<div class="grid">
-<div class="card pink"><h3>محترمہ منزہ احمد صاحبہ</h3><p>معلمہ جامعہ ھذا<br>اسناد و تقریب حنا</p></div>
-<div class="card blue"><h3>محترمہ میاں بیگم محمد معاذ صاحبہ</h3><p>مہمانِ گرامی</p></div>
-</div>
-
-<div class="grid">
-<div class="card red"><h3>محترمہ واعظہ خوش الحان باجی جان</h3><p>رضیہ ادریس صاحبہ</p></div>
-<div class="card yellow"><h3>عظیم معلمہ باجی جان سدرہ</h3><p>عروج صاحبہ</p></div>
-</div>
-
-<div class="grid">
-<div class="card purple"><h3>شعبہ جامعہ ھذا</h3><p>ناظرہ القرآن<br>تجوید و قرآت<br>ترجمہ و تفسیر<br>حدیث نبوی</p></div>
-<div class="card dark"><h3>ضیافت کا معقول انتظام ہوگا<br>ان شاء اللہ</h3><p>خواتین کیلئے</p></div>
-</div>
-
-<div class="footer">
-<h3>الداعی الی الخیر</h3>
-<p style="font-size:20px;line-height:2">ام معاذ<br>بیگم قاری محمد یوسف</p>
-<p>مدیرہ ادارہ ھذا</p>
-<div class="nums">
-<div>0305<br>4940552<small>رابطہ</small></div>
-<div>0305<br>4531595<small>آن لائن تعلیم اسلامی کورس</small></div>
-</div>
-<p style="font-size:12px;margin-top:12px;line-height:2">تمام کلاسز بعد نماز عصر ہوتی ہیں<br>ناظرہ، حفظ، ترجمہ، تفسیر، حدیث - آن لائن تعلیم اسلامی کورس اور کورس کی کلاسز کیلئے رابطہ کریں</p>
-</div>
-
-</div>
-
-<div class="bottom-nav">
-<button class="active" onclick="window.scrollTo({top:0,behavior:'smooth'})">🏠 ہوم</button>
-<button onclick="document.getElementById('audio6').play()">🎙️ آواز</button>
-<button onclick="openAdmin()">⚙️ Admin</button>
-<button onclick="shareApp()">📤 شیئر</button>
-</div>
-
-<!-- ADMIN PANEL - PEHLE WALA HTML WALA -->
-<div id="adminPanel">
-<h2 style="text-align:center;color:#FFD700">⚙️ Admin Panel</h2>
-<p style="text-align:center;font-size:13px">یہی پینل پہلے والے .html والا ہے - یہاں سے سب کچھ بدلیں، Save ہوتے ہی سائٹ اپڈیٹ ہو جائے گی</p>
-<label>Admin Password</label>
-<input id="adminPass" type="password" placeholder="Password likhen - 1234">
-<label>اوپر والا ہیڈنگ بدلیں</label>
-<input id="editTitle" value="ادارہ اصلاح البنات المسلمین">
-<label>تاریخ بدلیں</label>
-<input id="editDate" value="29 نومبر 2026 - بروز اتوار - صبح 10 سے 3 بجے تک">
-<label>Voice File Name (audio6 hi rakhen)</label>
-<input id="editAudio" value="audio6.mp3">
-<button onclick="saveAdmin()">✅ Save - محفوظ کریں</button>
-<button onclick="resetAdmin()" style="background:#fff">🔄 Reset کریں</button>
-<button onclick="closeAdmin()" style="background:#FF1493;color:#fff">❌ بند کریں</button>
-<p style="font-size:12px;margin-top:10px">Admin me koi bhi changing karne ke baad wo isi browser me save rehti hai. Dusre mobile pe dikhane ke liye dobara Save karna hoga.</p>
-</div>
+<!-- ADMIN -->
+<div id="adminPanel"><div class="box">
+  <h2 class="gold-text" style="text-align:center">⚙️ Admin Panel</h2>
+  <p style="text-align:center;font-size:12px;line-height:2">Changes sirf isi browser me save hoti hain.</p>
+  <label for="editTitle">ہیڈنگ بدلیں</label>
+  <input id="editTitle" value="ادارہ اصلاح البنات المسلمین">
+  <label for="editDate">تاریخ بدلیں</label>
+  <input id="editDate" value="29 نومبر 2026 - بروز اتوار - صبح 10 سے 3 بجے تک">
+  <label for="editAudio">Voice file name</label>
+  <input id="editAudio" value="audio6.mp3" dir="ltr">
+  <button class="btn" type="button" id="saveAdmin">✅ Save - محفوظ کریں</button>
+  <button class="btn alt" type="button" id="resetAdmin">🔄 Reset</button>
+  <button class="btn close" type="button" id="closeAdmin">❌ بند کریں</button>
+</div></div>
 
 <script>
-function openAdmin(){
-  let p = prompt("Admin Password likhen:");
-  if(p==="1234"){ document.getElementById('adminPanel').style.display='block'; }
-  else if(p!==null){ alert("Galat Password!"); }
-}
-function closeAdmin(){ document.getElementById('adminPanel').style.display='none'; }
-function saveAdmin(){
-  let t=document.getElementById('editTitle').value;
-  let d=document.getElementById('editDate').value;
-  let a=document.getElementById('editAudio').value;
-  localStorage.setItem('title',t); localStorage.setItem('date',d); localStorage.setItem('audio',a);
-  document.getElementById('audio6').src=a;
-  alert("Save ho gaya! ✅");
-  closeAdmin();
-}
-function resetAdmin(){ localStorage.clear(); location.reload(); }
-function shareApp(){
-  if(navigator.share){ navigator.share({title:'ادارہ اصلاح البنات',text:'اجتماع برائے خواتین - 29 نومبر',url:location.href}); }
-  else{ alert("Link copy kar ke share kar den: "+location.href); }
-}
-// Load saved admin data
-window.onload=function(){
-  if(localStorage.getItem('audio')){ document.getElementById('audio6').src=localStorage.getItem('audio'); document.getElementById('editAudio').value=localStorage.getItem('audio'); }
-}
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var splash=$('splash'), body=document.body, entered=false, raf=0;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- storage helpers (safe) ---- */
+  function sget(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function sset(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+
+  /* ---- gold particles on intro ---- */
+  var cv=$('fx'), cx=cv.getContext('2d'), P=[], W=0, H=0;
+  function size(){var d=Math.min(window.devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+  function make(){return{x:Math.random()*W,y:H+Math.random()*H*.3,r:Math.random()*2.2+.6,v:Math.random()*.7+.25,a:Math.random()*.6+.3,s:Math.random()*Math.PI*2}}
+  function loop(){
+    cx.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){
+      var p=P[i]; p.y-=p.v; p.s+=.02; p.x+=Math.sin(p.s)*.4;
+      if(p.y<-10){P[i]=make();continue}
+      var g=.5+.5*Math.sin(p.s*2);
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);
+      cx.fillStyle='rgba(240,205,110,'+(p.a*g).toFixed(2)+')';
+      cx.shadowColor='#e6c36a';cx.shadowBlur=8;cx.fill();
+    }
+    raf=requestAnimationFrame(loop);
+  }
+  if(!reduce){
+    size(); for(var i=0;i<(W<500?45:80);i++){var q=make();q.y=Math.random()*H;P.push(q)}
+    loop(); window.addEventListener('resize',size);
+  }
+
+  /* ---- enter site ---- */
+  function enter(){
+    if(entered)return; entered=true;
+    splash.classList.add('opening');
+    setTimeout(function(){
+      splash.classList.add('out'); body.classList.remove('lock'); window.scrollTo(0,0);
+      if(raf)cancelAnimationFrame(raf);
+      setTimeout(function(){splash.style.display='none'},1300);
+    },900);
+  }
+  $('enterBtn').addEventListener('click',enter);
+  $('skipBtn').addEventListener('click',enter);
+  setTimeout(enter,12000);
+
+  /* ---- scroll reveal ---- */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    rv.forEach(function(el){io.observe(el)});
+  }else{rv.forEach(function(el){el.classList.add('in')})}
+
+  /* ---- countdown ---- */
+  var target=new Date(2026,10,29,10,0,0).getTime();
+  function pad(n){return n<10?'0'+n:''+n}
+  function tick(){
+    var d=Math.max(0,target-Date.now()), s=Math.floor(d/1000);
+    $('cdD').textContent=pad(Math.floor(s/86400));
+    $('cdH').textContent=pad(Math.floor(s%86400/3600));
+    $('cdM').textContent=pad(Math.floor(s%3600/60));
+    $('cdS').textContent=pad(s%60);
+  }
+  tick(); setInterval(tick,1000);
+
+  /* ---- audio ---- */
+  function playVoice(){
+    var a=$('audio6');
+    $('voiceBox').scrollIntoView({behavior:'smooth',block:'center'});
+    var pr=a.play();
+    if(pr&&pr.catch)pr.catch(function(){$('audioMsg').textContent='آواز فائل نہیں ملی: audio6.mp3 اسی فولڈر میں رکھیں'});
+  }
+  $('playBtn').addEventListener('click',playVoice);
+  $('navVoice').addEventListener('click',playVoice);
+
+  /* ---- nav ---- */
+  document.querySelectorAll('[data-go]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=$(b.getAttribute('data-go')); if(t)t.scrollIntoView({behavior:'smooth'});
+      document.querySelectorAll('.bottom-nav button').forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+    });
+  });
+  $('navShare').addEventListener('click',function(){
+    var data={title:'ادارہ اصلاح البنات',text:'اجتماع برائے خواتین - 29 نومبر 2026',url:location.href};
+    if(navigator.share){navigator.share(data).catch(function(){})}
+    else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(function(){alert('Link copy ho gaya')}).catch(function(){prompt('Link copy karen:',location.href)})}
+    else{prompt('Link copy karen:',location.href)}
+  });
+
+  /* ---- admin ---- */
+  function applySaved(){
+    var t=sget('title'),d=sget('date'),a=sget('audio');
+    if(t){$('heroTitle').textContent=t;$('spTitle').textContent=t;$('editTitle').value=t}
+    if(d){$('dateLine').textContent=d;$('editDate').value=d}
+    if(a){$('audio6').src=a;$('editAudio').value=a}
+  }
+  applySaved();
+  $('navAdmin').addEventListener('click',function(){
+    var p=prompt('Admin Password likhen:');
+    if(p==='1234'){$('adminPanel').style.display='block'}
+    else if(p!==null){alert('Galat Password!')}
+  });
+  $('closeAdmin').addEventListener('click',function(){$('adminPanel').style.display='none'});
+  $('saveAdmin').addEventListener('click',function(){
+    sset('title',$('editTitle').value);sset('date',$('editDate').value);sset('audio',$('editAudio').value);
+    applySaved();alert('Save ho gaya ✅');$('adminPanel').style.display='none';
+  });
+  $('resetAdmin').addEventListener('click',function(){
+    try{localStorage.removeItem('title');localStorage.removeItem('date');localStorage.removeItem('audio')}catch(e){}
+    location.reload();
+  });
+})();
 </script>
 </body>
 </html>
