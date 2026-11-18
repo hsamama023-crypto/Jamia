@@ -1,81 +1,61 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ایڈمن - ادارہ اصلاح بنات المسلمین</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin - سب نام بدلیں</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Nastaliq Urdu',serif;background:#FBF6E6;padding:16px;direction:rtl;line-height:2}
-.box{max-width:560px;margin:0 auto;background:#fff;border:2px solid #C9A227;border-radius:20px;padding:20px}
-h2{color:#0A3D2A;text-align:center;font-size:22px;line-height:1.9}
-p{font-size:13px;color:#666;text-align:center;line-height:1.9}
-label{font-weight:700;font-size:14px;color:#0A3D2A;display:block;margin-top:14px}
-input,textarea,select{width:100%;padding:11px;border:1px solid #ddd;border-radius:10px;margin-top:6px;font-family:'Noto Nastaliq Urdu',serif;font-size:14px}
-textarea{line-height:2}
-.btn{width:100%;background:#0A3D2A;color:#fff;border:none;padding:14px;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px;font-family:'Noto Nastaliq Urdu',serif;margin-top:16px}
-.btn2{width:100%;background:#fff;color:#0A3D2A;border:1px solid #0A3D2A;padding:11px;border-radius:12px;cursor:pointer;margin-top:10px;font-family:'Noto Nastaliq Urdu',serif}
-.back{display:block;text-align:center;margin-top:12px;color:#0A3D2A;font-weight:700;text-decoration:none}
-.audioBox{background:#FFF9EC;border:2px dashed #C9A227;border-radius:14px;padding:14px;margin-top:16px}
-.audioBox audio{width:100%;margin-top:8px}
-</style>
-</head>
+body{font-family:system-ui;background:#04231c;color:#fff6dc;padding:16px;max-width:600px;margin:auto}
+h2{text-align:center;color:#e6c36a}
+h3{color:#e6c36a;margin:22px 0 0;border-bottom:1px solid #e6c36a;padding-bottom:5px}
+label{display:block;margin:12px 0 4px;font-weight:700;font-size:14px}
+input,textarea{width:100%;padding:11px;border-radius:10px;border:1px solid #e6c36a;background:#fff;color:#111;font-size:15px;box-sizing:border-box;font-family:inherit}
+button{width:100%;padding:13px;margin-top:12px;border:0;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer}
+.save{background:#e6c36a;color:#000}.back{background:#333;color:#fff}.reset{background:#b00020;color:#fff}
+</style></head>
 <body>
-<div class="box">
-<h2>⚙️ ایڈمن پینل - صرف آپ</h2>
-<p>یہ صفحہ صرف آپ کے لیے ہے۔ یہاں سے بدلیں، ویب سائٹ خود اپ ڈیٹ ہو جائے گی۔</p>
-<div id="loginBox">
-<label>پاسورڈ لکھیں</label>
-<input id="adminPass" type="password" placeholder="1234" style="text-align:center">
-<button class="btn" onclick="checkPass()">لاگ ان</button>
-<a class="back" href="index.html">← ویب سائٹ پر واپس جائیں</a>
-</div>
-<div id="adminForm" style="display:none">
-<label>ادارے کا نام</label><input id="f_madName">
-<label>جلسے کا ٹائٹل</label><input id="f_heroTitle">
-<label>جلسے کی تفصیل</label><textarea id="f_heroDesc" rows="3"></textarea>
-<label>تاریخ و وقت</label><input id="f_date" type="datetime-local" style="direction:ltr">
-<label>تاریخ والی لائن</label><input id="f_dateLine">
-<label>ادارے کی تفصیل</label><textarea id="f_madDesc" rows="3"></textarea>
-<label>فون نمبر</label><input id="f_phone" style="direction:ltr">
-<label>📍 لوکیشن / پتہ - صرف آپ</label><input id="f_loc">
-<label>📍 گوگل میپ کا لنک</label><input id="f_map" placeholder="https://maps.google.com/..." style="direction:ltr">
-<label>تعاون اکاؤنٹ (جاز کیش)</label><input id="f_account">
-<label>پروگرام - ہر لائن: وقت | عنوان | تفصیل</label><textarea id="f_prog" rows="6"></textarea>
-<label>مہمان - ہر لائن: نام | کام | کردار</label><textarea id="f_guests" rows="5"></textarea>
+<h2>⚙️ Admin Panel - سب کچھ بدلیں</h2>
+<p style="text-align:center;font-size:13px">Password: 1234</p>
 
-<div class="audioBox">
-<h3 style="color:#0A3D2A">🎙️ آڈیو - Audio Option</h3>
-<p style="text-align:right;font-size:13px">آڈیو فائل کا نام ہمیشہ <b>audioo</b> رکھیں۔ GitHub میں <b>audioo.mp3</b> نام سے فائل ڈالیں۔</p>
-<label>🎙️ آڈیو فائل کا نام</label><input id="f_audioName" value="audioo.mp3" style="direction:ltr;text-align:left">
-<label>🎙️ آڈیو چلانا ہے؟</label>
-<select id="f_audioOn"><option value="on">✅ ہاں - چلاؤ</option><option value="off">❌ نہیں - بند رکھو</option></select>
-<label>🎙️ آڈیو کا عنوان (ویب سائٹ پر لکھا آئے گا)</label><input id="f_audioTitle" placeholder="مثال: نعت شریف - ادارہ اصلاح بنات المسلمین">
-<button class="btn2" onclick="playPreview()">▶️ آڈیو سن کر دیکھو</button>
-<audio id="audioPreview" controls style="display:none"></audio>
-<p style="font-size:12px;color:#888">اگر آڈیو نہیں چل رہی تو چیک کریں کہ GitHub میں <b>audioo.mp3</b> ڈالی ہے یا نہیں۔</p>
-</div>
+<h3>🏠 Main</h3>
+<label>Heading - ادارہ کا نام</label><input id="title">
+<label>تاریخ - Date Line</label><input id="date">
+<label>Voice File</label><input id="audio" dir="ltr">
 
-<label>نیا پاسورڈ (خالی = 1234 ہی رہے گا)</label><input id="f_newPass" placeholder="نیا پاسورڈ">
-<button class="btn" onclick="saveAdmin()">✅ محفوظ کرو - ویب سائٹ اپ ڈیٹ کرو</button>
-<button class="btn2" onclick="preview()">👀 ویب سائٹ دیکھو</button>
-<button class="btn2" style="color:#c00;border-color:#f00" onclick="resetAdmin()">ری سیٹ کرو</button>
-<a class="back" href="index.html">← ویب سائٹ پر واپس جائیں</a>
-</div>
-</div>
+<h3>🌸 زیر صدارت و نقابت</h3>
+<label>زیر صدارت - نام</label><input id="sadarat">
+<label>نقابت - نام</label><input id="naqabat">
+
+<h3>💐 مہمانان گرامی</h3>
+<label>مہمان 1</label><input id="m1">
+<label>مہمان 2</label><input id="m2">
+<label>مہمان 3</label><input id="m3">
+<label>مہمان 4</label><input id="m4">
+
+<h3>🎓 اساتذہ</h3>
+<label>استاد 1</label><input id="u1">
+<label>استاد 2</label><input id="u2">
+<label>استاد 3</label><input id="u3">
+
+<h3>🎤 خطاب</h3>
+<label>خطاب 1</label><textarea id="k1" rows="2"></textarea>
+<label>خصوصی خطاب 2</label><textarea id="k2" rows="2"></textarea>
+
+<h3>📞 Footer / رابطہ</h3>
+<label>مدیرہ کا نام</label><input id="foot">
+<label>Phone 1</label><input id="ph1" dir="ltr">
+<label>Phone 2</label><input id="ph2" dir="ltr">
+
+<button class="save" onclick="saveAll()">✅ Save - محفوظ کریں</button>
+<button class="reset" onclick="resetAll()">🔄 Reset</button>
+<button class="back" onclick="location.href='index.html'">🏠 Wapas Home</button>
+
 <script>
-let DEF={madName:"ادارہ اصلاح بنات المسلمین",heroTitle:"افتتاحی جلسہ",heroDesc:"اللہ کے فضل سے ہمارے نئے ادارے کا افتتاحی پروگرام ہونے جا رہا ہے۔ بچیوں اور خواتین کے لیے دینی تعلیم کا یہ نیا مرکز - آپ سب کو دل سے دعوت ہے۔ ضرور تشریف لائیں۔",date:"2026-11-29T10:00",dateLine:"📅 ۲۹ نومبر ۲۰۲۶ • اتوار • صبح ۱۰ بجے سے ۳ بجے تک",madDesc:"بچیوں اور خواتین کے لیے دینی تعلیم کا ادارہ۔ ناظرہ قرآن، تجوید، ترجمہ تفسیر اور حدیث کی تعلیم - پردے کے مکمل انتظام کے ساتھ۔",phone:"0305-4940552 / 0305-4531595",loc:"جھیل ٹاؤن، گلی نمبر ۱۱، چندا قلعہ، گوجرانوالہ",map:"https://maps.google.com/?q=Jhelum+Town+Chanda+Qila+Gujranwala",account:"0305-4940552 - مدیرہ ادارہ",prog:"10:00 AM | تلاوت قرآن | بچیوں کی طرف سے تلاوت کلام پاک\n10:30 AM | نعت شریف | محفل نعت - خواتین\n11:30 AM | افتتاحی بیان | خصوصی بیان - مہمان خصوصی\n1:00 PM | دعائے خیر | ادارے کے لیے اجتماعی دعا\n2:00 PM | ضیافت | ضیافت کا معقول انتظام",guests:"محترمہ ام عبداللہ صاحبہ | مہمان خصوصی | جھیل ٹاؤن\nمحترمہ بیگم محمد شعیب صاحبہ | مہمان خصوصی | خصوصی شرکت\nمحترمہ ام صدیق احمد صاحبہ | مہمان خصوصی | بیان\nمحترمہ خوش بخت | خصوصی خطاب | بیان\nمحترمہ عائشہ صدیقہ | معلمہ | ادارہ",pass:"1234",audioName:"audioo.mp3",audioOn:"on",audioTitle:"🎙️ نعت شریف - ادارہ اصلاح بنات المسلمین"};
-let KEYS=['madrasaFinalUrdu','madrasaUrduFinal','madrasaFinal','madrasaData'];
-function loadS(){let out={};for(let k of KEYS){try{let v=JSON.parse(localStorage.getItem(k)||'{}');out={...out,...v};}catch(e){}}return out;}
-let S=loadS();
-function get(k){return S[k]!==undefined&&S[k]!==""?S[k]:DEF[k]}
-function checkPass(){if(document.getElementById('adminPass').value===get('pass')){document.getElementById('loginBox').style.display='none';document.getElementById('adminForm').style.display='block';fillForm();}else alert('غلط پاسورڈ!');}
-function fillForm(){document.getElementById('f_madName').value=get('madName');document.getElementById('f_heroTitle').value=get('heroTitle');document.getElementById('f_heroDesc').value=get('heroDesc');document.getElementById('f_date').value=get('date');document.getElementById('f_dateLine').value=get('dateLine');document.getElementById('f_madDesc').value=get('madDesc');document.getElementById('f_phone').value=get('phone');document.getElementById('f_loc').value=get('loc');document.getElementById('f_map').value=get('map');document.getElementById('f_account').value=get('account');document.getElementById('f_prog').value=get('prog');document.getElementById('f_guests').value=get('guests');document.getElementById('f_audioName').value=get('audioName');document.getElementById('f_audioOn').value=get('audioOn');document.getElementById('f_audioTitle').value=get('audioTitle');}
-function saveAdmin(){S.madName=document.getElementById('f_madName').value;S.heroTitle=document.getElementById('f_heroTitle').value;S.heroDesc=document.getElementById('f_heroDesc').value;S.date=document.getElementById('f_date').value;S.dateLine=document.getElementById('f_dateLine').value;S.madDesc=document.getElementById('f_madDesc').value;S.phone=document.getElementById('f_phone').value;S.loc=document.getElementById('f_loc').value;S.map=document.getElementById('f_map').value;S.account=document.getElementById('f_account').value;S.prog=document.getElementById('f_prog').value;S.guests=document.getElementById('f_guests').value;S.audioName=document.getElementById('f_audioName').value||'audioo.mp3';S.audioOn=document.getElementById('f_audioOn').value;S.audioTitle=document.getElementById('f_audioTitle').value;let np=document.getElementById('f_newPass').value;if(np) S.pass=np;for(let k of KEYS){localStorage.setItem(k,JSON.stringify(S));}alert('✅ ہو گیا! Audio bhi save ho gaya!');}
-function playPreview(){let a=document.getElementById('audioPreview');a.src=document.getElementById('f_audioName').value||'audioo.mp3';a.style.display='block';a.play();}
-function preview(){window.location.href='index.html';}
-function resetAdmin(){if(confirm('سب ری سیٹ کر دوں؟')){for(let k of KEYS){localStorage.removeItem(k);}S={};fillForm();alert('ری سیٹ ہو گیا');}}
+var keys=['title','date','audio','sadarat','naqabat','m1','m2','m3','m4','u1','u2','u3','k1','k2','foot','ph1','ph2'];
+var def={'title':'ادارہ اصلاح البنات المسلمین','date':'29 نومبر 2026 - بروز اتوار - صبح 10 سے 3 بجے تک','audio':'audio6.mp3','sadarat':'محترمہ ام عبداللہ صاحبہ','naqabat':'محترمہ حافظہ بیگم محمد شوکت صاحبہ','m1':'محترمہ ام صدیق الرحمن صاحبہ','m2':'محترمہ بیگم حافظ محمد عمار صاحبہ','m3':'محترمہ مسز خان بہادر صاحبہ','m4':'محترمہ بیگم رحمت اللہ صاحبہ','u1':'محترمہ مسز محمد احمد صاحبہ','u2':'محترمہ میاں بیگم محمد معاذ صاحبہ','u3':'محترمہ ام محمد صاحبہ','k1':'محترمہ واعظہ خوش الحان باجی جان رضیہ ادریس صاحبہ','k2':'عظیم معلمہ باجی جان سدرہ عروج صاحبہ','foot':'ام معاذ بیگم قاری محمد رفیق','ph1':'0305 4940552','ph2':'0305 4531595'};
+var p=prompt('Admin Password:'); if(p!=='1234'){alert('Galat Password!'); location.href='index.html';}
+function load(){keys.forEach(function(k){document.getElementById(k).value=localStorage.getItem(k)||def[k]});}
+function saveAll(){keys.forEach(function(k){localStorage.setItem(k,document.getElementById(k).value)}); alert('✅ Save ho gaya! Ab Home pe dekho');}
+function resetAll(){localStorage.clear(); load(); alert('Reset ho gaya');}
+load();
 </script>
 </body>
-  </html>
+</html>
